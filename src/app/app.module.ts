@@ -12,8 +12,9 @@ import { GlobalConstants } from 'src/assets/const';
 import {LandingPageComponent} from './landing-page/landing-page.component';
 
 
-const appRoutes: Routes = [
-  {path: 'login', component: LoginComponent}
+const routes: Routes = [
+  { path: '', component: LandingPageComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
@@ -28,7 +29,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(routes)
   ],
   providers: [HelperServices,GlobalConstants],
   bootstrap: [AppComponent]

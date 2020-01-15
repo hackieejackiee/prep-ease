@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
 
-  constructor(){}
+  constructor(private router: Router){}
 
   public ngOnInit() {
 
@@ -16,7 +16,8 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   public navigateToLogin(type:string){
     if(type === 'teacher'){
-      
+      console.log('ABC');
+      this.router.navigate(['/login']);
     }
   }
   public ngOnDestroy() {
