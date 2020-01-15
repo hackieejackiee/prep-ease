@@ -1,0 +1,240 @@
+<div class="login-bg">
+  <div class="box">
+    <!---------------------LOGIN Page----------------------->
+    <ng-container *ngIf="showSignin">
+      <div class="left-section nav-section background-green">
+        <h1 class="text-white bold">Hello, Friend!</h1>
+        <p class="content">
+          Please enter the personal details to start journey with us
+        </p>
+        <div class="btn-secondary" (click)="onNavigate('signup')">Sign Up</div>
+      </div>
+      <div class="right-section content-section">
+        <h1 class="text-green bold">Sign in to Prep-ease</h1>
+        <div class="signin-form-container">
+          <div>
+            <input
+              type="email"
+              id="username"
+              name="username"
+              [(ngModel)]="username"
+              placeholder="Email"
+              class="email-input"
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              placeholder="Password"
+              class="password-input"
+            />
+          </div>
+        </div>
+        <div class="btn-primary" (click)="onSignin()">Sign in</div>
+      </div>
+    </ng-container>
+    <!------------------------------------------------------>
+
+    <!------------------SIGN UP Page------------------------>
+    <ng-container *ngIf="showSignup">
+      <div class="left-section content-section ">
+        <h1 class="text-green bold">Create Account</h1>
+        <div class="row">
+          <div class="col-xs-12">
+            <ul>
+              <li class="" [ngClass]="{'active':formNavigate === 'personal'}" (click)="onFormNavigation('personal')">Personal Details</li>
+              <li [ngClass]="{'active':formNavigate === 'parent'}" (click)="onFormNavigation('parent')">Parent Details</li>
+              <li [ngClass]="{'active':formNavigate === 'education'}" (click)="onFormNavigation('education')">Education Details</li>
+            </ul>
+          </div>
+        </div>
+        <form class="form-container">
+          <ng-container  [ngSwitch]="formNavigate">
+          <!------------------Personal Details------------------------>
+          <ng-container *ngSwitchCase="'personal'">
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  [(ngModel)]="firstname"
+                  placeholder="First Name"
+                  class=""
+                />
+              </div>
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  [(ngModel)]="lastname"
+                  placeholder="Last Name"
+                  class=""
+                />
+              </div>
+            </div>
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="email"
+                  placeholder="Email"
+                  class=""
+                />
+              </div>
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  id="phoneno"
+                  name="phoneno"
+                  [(ngModel)]="phoneno"
+                  placeholder="Phone No."
+                  class=""
+                />
+              </div>
+            </div>
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  [(ngModel)]="dob"
+                  placeholder="Date Of Birth"
+                  class=""
+                  required
+                />
+              </div>
+              <div class="col-xs-6">
+                <select class="">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="others">Others</option>
+                </select>
+              </div>
+            </div>
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  [(ngModel)]="password"
+                  placeholder="Password"
+                  class=""
+                />
+              </div>
+              <div class="col-xs-6">
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  [(ngModel)]="confirmPassword"
+                  placeholder="Confirm Password"
+                  class=""
+                />
+              </div>
+            </div>
+          </ng-container>
+          <!------------------Parent Details------------------------>
+          <ng-container *ngSwitchCase="'parent'">
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  id="parentfirstname"
+                  name="parentfirstname"
+                  [(ngModel)]="parentFirstName"
+                  placeholder="First Name"
+                  class=""
+                />
+              </div>
+              <div class="col-xs-6">
+                <select class="">
+                  <option value="male">Qualification</option>
+                  <option value="female"></option>
+                  <option value="others"></option>
+                </select>
+              </div>
+            </div>
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="email"
+                  placeholder="Email"
+                  class=""
+                />
+              </div>
+              <div class="col-xs-6">
+                <input
+                  type="text"
+                  id="phoneno"
+                  name="phoneno"
+                  [(ngModel)]="phoneno"
+                  placeholder="Phone No."
+                  class=""
+                />
+              </div>
+            </div>
+          </ng-container>
+
+           <!------------------Education Details------------------------>
+           <ng-container *ngSwitchCase="'education'">
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <select class="">
+                  <option value="male">Class</option>
+                  <option value="female"></option>
+                  <option value="others"></option>
+                </select>
+              </div>
+              <div class="col-xs-6">
+                <select class="">
+                  <option *ngFor="let institute of allInstitutes">{{institute.instituteName}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="signup-form-container row">
+              <div class="col-xs-6">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  [(ngModel)]="email"
+                  placeholder="Email"
+                  class=""
+                />
+              </div>
+              <div class="col-xs-6">
+                <select class="">
+                  <option value="male">Subjects</option>
+                  <option value="female"></option>
+                  <option value="others"></option>
+                </select>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+        </form>
+        <button type="submit" [ngClass]="{'disabled': formNavigate !== 'education'}" class="btn-primary" (click)="onSignUp()">Sign Up</button>
+      </div>
+      <div class="right-section nav-section background-green">
+        <h1 class="text-white bold">Welcome, Back!</h1>
+        <p class="content">
+          To stay connected please login with your login credentials
+        </p>
+        <div class="btn-secondary" (click)="onNavigate('signin')">Sign In</div>
+      </div>
+    </ng-container>
+    <!------------------------------------------------------>
+  </div>
+</div>

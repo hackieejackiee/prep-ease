@@ -1,0 +1,91 @@
+.container1{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+  
+  }
+  .hr{
+    border: 0.5px solid black;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    margin-top:4vh;
+    
+  }
+  .div1{
+    margin-top: 2em;
+    margin-left: 3em;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  .div2{
+    margin-left: 8em;
+    margin-top: 6em;
+  }
+  .div2a{
+    color: #738f93;
+    letter-spacing: -0.013em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 44px;
+  }
+  .div2b{
+    color: #738f93;
+    letter-spacing: -0.013em;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 44px;
+  }
+  .left{
+    width:60%;
+    height:100%;
+  }
+  .right{
+    width:40%;
+    height:100%;
+  }
+  .right1{
+    background-image: url("../../assets/images/pencil.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 100%;
+    overflow: hidden;
+    margin: 3em;
+  }
+  .dual-login{
+    margin-top: 6em;
+    margin-left: 8em;
+    display: flex;
+  
+  }
+  .dual-left{
+    margin-right: 5em;
+  }
+  .students-heading{
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  .teachers-heading{
+    font-weight: bold;
+    font-size: xx-large;
+  }
+  .text{
+    color: #738f93;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+  }
+  .btn-primary{
+    background-color: white;
+    padding: 1em;
+    padding-left: 3em;
+    margin-left: 1em;
+    border: none;
+    border-radius: 2em;
+    padding-right: 3em;
+    color: black;
+}
+  .copyright{
+    color: #738f93;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin:13em;
+}
