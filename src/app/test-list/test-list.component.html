@@ -1,0 +1,77 @@
+<div class="main-container">
+    <div class="left-panel">
+      <div class="test-details">
+        <div class="test-heading">{{test.testTitle}}</div>
+        <span class="class">Class: 12th</span>
+        <span class="subject">Subject: {{test.subjectName}}</span>
+      </div>
+      <hr>
+      <div *ngFor="let question of questionPaper; let i = index;">
+        <div>
+          <button class="question-button">{{i+1}}</button>
+          <!-- <button class="question-button">2</button>
+          <button class="question-button">3</button> -->
+        </div>
+        <!-- <div>
+          <button class="question-button">4</button>
+          <button class="question-button">5</button>
+          <button class="question-button">6</button>
+        </div>
+        <div>
+          <button class="question-button">7</button>
+          <button class="question-button">8</button>
+          <button class="question-button">9</button>
+        </div>
+        <div>
+          <button class="question-button">10</button>
+          <button class="question-button">11</button>
+          <button class="question-button">12</button>
+        </div>
+        <div>
+          <button class="question-button">13</button>
+          <button class="question-button">14</button>
+          <button class="question-button">15</button>
+        </div>
+        <div>
+          <button class="question-button">16</button>
+          <button class="question-button">17</button>
+          <button class="question-button">18</button>
+        </div>
+        <div>
+          <button class="question-button">19</button>
+          <button class="question-button">20</button>
+        </div> -->
+      </div>
+      <div style="padding:0.5em;">
+        <button class="submit-test">Submit</button>
+      </div>
+    </div>
+    <div class="right-panel"></div>
+    <div>
+      <div class="question-card"><span>Question  :</span>
+        <div style="margin-top: 0.5em;">
+          <span>
+            The gradient of the curve     2
+  y = x -5x + 6   is zero at which of the following values of x ?  
+            </span>
+          <span><img src="" alt=""></span>
+        </div>
+      </div>
+      <div style="margin-top: 2em; margin-left: 1.3em; font-size: 1.1em;">
+        <form action="/action_page.php">
+          <div>Choose the correct answer from the options given below:</div>
+          <input type="radio" name="option" value="male" class="radio"> 2<br>
+          <input type="radio" name="option" value="female" class="radio"> -1<br>
+          <input type="radio" name="option" value="other" class="radio"> none<br>
+          <input type="radio" name="option" value="30" class="radio">0<br>
+          <!-- <div style="display: flex; justify-content: center; margin-right:3em; margin-top: 5em;"> -->
+            <div>
+        <!-- <a href="" style="margin-rig">Previous</a> -->
+          <input type="submit" value="Save" class="radio">
+        <!-- <a href="/">Next</a> -->
+      </div>
+  </form>
+      </div>
+      
+    </div>
+  </div>

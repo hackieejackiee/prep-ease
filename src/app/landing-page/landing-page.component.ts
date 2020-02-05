@@ -16,8 +16,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   public navigateToLogin(type:string){
     if(type === 'teacher'){
-      console.log('ABC');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login', 'teacher']);
+    }
+    if(type === 'student'){
+      this.router.navigate(['/login', 'student']);
     }
   }
   public ngOnDestroy() {

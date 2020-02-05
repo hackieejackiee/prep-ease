@@ -1,0 +1,168 @@
+<div style="background-color: #f1f1f1;" class="left-container">
+  <div>
+    <div class="nav-heading">
+      Prep-Ease
+    </div>
+    <div style="display: flex;" class="left-top-container">
+        <span><img class="profile-icon" src="../../assets/images/profile-icon.png" alt=""/></span>
+      <span class="my-profile">My Profile </span>
+    </div>
+  </div>
+  <ul>
+    <li>Home</li>
+    <li (click)="navigateTo('createTest')" [ngClass]="{'active':navigate === 'createTest'}">Create test</li>
+    <!-- <li (click)="navigateTo('dashboard')" [ngClass]="{'active':navigate === 'dashboard'}">Dashboard</li> -->
+    <li>Discussion Forum</li>
+    <li>Videos</li>
+    <li>Result</li>
+    <!-- <li><a href="#about">About</a></li> -->
+  </ul>
+</div>
+<!-- Teacher test creation area -->
+
+<div style="margin-left:19%;padding:1px 16px;">
+    <!-- <ng-container *ngIf="navigate === 'dashboard'">
+    <div style="text-align: center;">Dashboard</div>
+  
+  <div style="display:flex;" class="cards-container">
+    <div class="card">
+      <div style="display:block;">
+        <span style="font-size:1em" onclick="navigateToUpcomingTests()">Upcoming Tests</span>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:block;">
+        <span style="font-size:1em">Assisgnments</span>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:block;">
+        <span style="font-size:1em">Evaluations</span>
+      </div>
+    </div>
+    <div class="card">
+      <div style="display:block;">
+        <span style="font-size:1em">My Skills</span>
+      </div>
+    </div>
+  </div>
+  <p>
+    Lorem ipsum is placeholder text commonly used in the graphic, print, and
+    publishing industries for previewing layouts and visual mockups.
+  </p>
+</ng-container> -->
+    <!-- Question List -->
+    <ng-container *ngIf="navigate === 'createTest'">
+<div [ngClass]="{'bg-blur':showSubjectDetails || showQuestionForm}">
+    <header class="add-question">
+        <button type="submit" class="btn-icon" tooltip="Add question" (click)="onAddQuestion()" >+</button>
+        <span class="title">Question Paper</span>
+    </header>
+    <section>
+        <!-- <div *ngIf="questionList.length !== 0" class="question-list">
+            <div *ngFor="let question of questionList; let i = index" class="question">
+                <span>{{i+1}}.</span>
+                <span>{{question.question}}</span>
+            </div>
+        </div> -->
+        <div class="test-cards-container" *ngIf="questionList.length !== 0">
+          <div class="test-cards" *ngFor="let question of questionList; let i = index">
+            <div class="test-heading" >
+              <span>{{i+1}}.</span>
+              <span class="heading-content">{{question.question}}</span>
+            </div>
+          </div>
+
+        </div>
+    </section>
+    <footer>
+        <div [ngClass]="{'disable':(isTestDetailIncomplete || questionList.length === 0)}">
+            <button class="btn-primary" (click)="onPaperSubmission()">Submit Paper</button>
+        </div>
+    </footer>
+</div>
+    <ng-container *ngIf="showSubjectDetails">
+    <div class="test-detail row">
+        <div class="col-xs-12 test-detail-form nav-heading">Test paper details</div>
+     <div class="col-xs-12 test-detail-form">
+         <input type="text" placeholder="Title" [(ngModel)]="title">
+     </div>
+     <div class="row test-detail-form">
+         <div class="col-xs-6 pr-2">
+             <input type="date" placeholder="Start Date" [(ngModel)]="startDate" required>
+         </div>
+         <div class="col-xs-6 pl-2">
+            <input type="date" placeholder="End Date" [(ngModel)]="endDate" required>
+        </div>
+    </div>
+     <div class="col-xs-12 test-detail-form">
+         <select (change)="onSubjectChange($event)">
+             <option value="">Subject</option>
+             <option *ngFor="let subject of allSubjects" value="{{subject.id}}">{{subject.subjectName}}</option>
+         </select>
+     </div>
+     <div class="col-xs-12 test-detail-form">
+        <select (change)="onClassChange($event)">
+          <option value="">Class</option>
+          <option *ngFor="let class of allClasses" value="{{class.id}}">{{class.className}}</option>
+        </select>
+      </div>
+      <div class="col-xs-12 test-detail-form">
+        <select (change)="onInstituteChange($event)">
+            <option value="">Institutes</option>
+            <option *ngFor="let institute of allInstitutes" value="{{institute.id}}">{{institute.instituteName}}</option>
+          </select>
+     </div>
+     <div class="col-xs-12 test-detail-form">
+        <textarea rows="5" cols="70" placeholder="Enter the description of the test." [(ngModel)]="questionDesc"></textarea>
+    </div>
+    <div 
+    [ngClass]="{'disable': (this.title === '' || this.startDate === '' || this.endDate === '' || this.subjectId === '' || this.classId === ''|| this.instituteId === '' || this.questionDesc === '')}">
+        <button class="btn-primary " type="submit" (click)="onSubmitTestPaperDetail()">Next</button>
+    </div>
+</div>
+</ng-container>
+
+   
+<!-- Question form-->
+        <ng-container *ngIf="showQuestionForm">
+            <div class="question-detail row">
+                <div class="col-xs-12 test-detail-form nav-heading">Add Question</div>
+             <div class="col-xs-12 test-detail-form">
+                 <input type="text" placeholder="Question" [(ngModel)]="question">
+             </div>
+             <div class="col-xs-12 test-detail-form">
+                <input type="text" placeholder="Option 1" [(ngModel)]="option1">
+             </div>
+             <div class="col-xs-12 test-detail-form">
+                <input type="text" placeholder="Option 2" [(ngModel)]="option2">
+              </div>
+              <div class="col-xs-12 test-detail-form">
+                <input type="text" placeholder="Option 3" [(ngModel)]="option3">
+             </div>
+             <div class="col-xs-12 test-detail-form">
+                <input type="text" placeholder="Option 4" [(ngModel)]="option4">
+             </div>
+             <div class="col-xs-12 test-detail-form">
+                <select (change)="onAnswerChange($event)">
+                    <option value="">Answer</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+             </div>
+             <div class="col-xs-12 test-detail-form row">
+                <div class="file-choose"><input type="file" placeholder="Upload Question Image..." (change)="onFileSelect($event)"></div>
+                <div class="upload-btn"><button type="button" (click)="uploadImage()">Upload</button></div>
+             </div>
+            <div
+            [ngClass]="{'disable': (question === '' || option1 === '' || option2 === '' || option3 === '' || option4 === ''|| answer === '' || imgPath === '')}">
+                <button class="btn-primary " type="submit" (click)="onAddQuestionDetail()">Add</button>
+            </div
+            >
+        </div>
+        </ng-container>
+  
+    </ng-container>
+</div>

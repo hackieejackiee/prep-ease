@@ -1,0 +1,37 @@
+<div>
+    <div style="background-color: #F1F1F1;" class="left-container">
+      <div>
+        <div class="nav-heading">
+          Prep-Ease
+        </div>
+        <div style="display: flex;" class="left-top-container">
+            <span><img class="profile-icon" src="../../assets/images/profile-icon.png" alt=""/></span>
+          <span class="my-profile">My Profile </span>
+        </div>
+      </div>
+      <ul>
+        <li>Home</li>
+        <li>Create test</li>
+        <li class="active">Upcoming Test</li>
+        <li>Discussion Forum</li>
+        <li>Videos</li>
+        <li>Result</li>
+      </ul>
+    </div>
+    <div class="ut-container">
+    <h2 style="text-align: center;" class="upcoming-tests">Upcoming Tests</h2>
+    </div>
+    <div class="test-cards-container" *ngFor="let test of testList">
+        <div class="test-cards" (click)="startTest(test)">
+          <div class="test-heading"><span class="heading-content">{{test.testTitle}}</span></div>
+          <div class="test-details"><span>{{test.description}}</span></div>
+          <div class="tdetails-bottom">
+          <span class="bottom-elements">Class: {{1}}</span>
+          <span class="bottom-elements">Subject: {{test.subjectName}}</span>
+          <span class="bottom-elements">Start Date: {{test.startDate}}</span>      
+          <span class="bottom-elements">End Date: {{test.endDate}}</span>
+           <button class="start-button" type="submit">Start Test</button>
+          </div>
+        </div>
+      </div>
+      </div>

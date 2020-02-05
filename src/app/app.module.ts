@@ -10,18 +10,32 @@ import { HttpClientModule } from '@angular/common/http';
 import { HelperServices } from '../assets/services';
 import { GlobalConstants } from 'src/assets/const';
 import {LandingPageComponent} from './landing-page/landing-page.component';
-
+import { SignupComponent } from './globalelems/signup/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {UpcomingTestsComponent} from './upcoming-tests/upcoming-tests.component';
+import { DashboardStudentComponent } from './dashboard-student/dashboard-student.component';
+import { TestListComponent } from './test-list/test-list.component';
 
 const routes: Routes = [
+  // {path: 'fgug', component: DashboardComponent},
   { path: '', component: LandingPageComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login/:id', component: LoginComponent },
+  { path: 'dashboard',component: DashboardComponent},
+  { path: 'dashboard-student',component: DashboardStudentComponent},
+  { path: 'upcomingTests', component: UpcomingTestsComponent },
+  { path: 'test/:testId', component: TestListComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    SignupComponent,
+    DashboardComponent,
+    UpcomingTestsComponent,
+    DashboardStudentComponent,
+    TestListComponent
   ],
   imports: [
     BrowserModule,
