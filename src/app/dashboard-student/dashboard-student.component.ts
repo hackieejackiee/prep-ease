@@ -21,7 +21,7 @@ export class DashboardStudentComponent implements OnInit, OnDestroy {
               private _helper: HelperServices) { }
 
   public ngOnInit() {
-    this._helper.getAllTest("", "5e107e21d3035635a800baa0")
+    this._helper.getAllTest("5e10577a937042241d3d62bc", "5e107e21d3035635a800baa0")
       .pipe(first(), takeUntil(this.unsubscribe$))
       .subscribe((response: Types.ITestListDetail) => {
         this.testList = response.TestList;

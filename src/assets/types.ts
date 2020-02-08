@@ -129,10 +129,22 @@ export interface IQuestionPaperDetail{
 }
 
 export interface IQuestionPaper{
+        question_id: string;
         question: string,
         option1: string,
         option2: string,
         option3: string,
         option4: string,
+        selectedOption?: string,
         image: string
+}
+export interface ISavedAnswer{
+        question_id: string,
+        answer: string
+}
+export interface ISubmitAnswer{
+        test_id: string;
+        student_Id: string;
+        answersList: ISavedAnswer[];
+
 }
