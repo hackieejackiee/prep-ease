@@ -157,7 +157,7 @@
                 <div class="upload-btn"><button type="button" (click)="uploadImage()">Upload</button></div>
              </div>
             <div
-            [ngClass]="{'disable': (question === '' || option1 === '' || option2 === '' || option3 === '' || option4 === ''|| answer === '' || imgPath === '')}">
+            [ngClass]="{'disable': (question === '' || option1 === '' || option2 === '' || option3 === '' || option4 === ''|| answer === '')}">
                 <button class="btn-primary " type="submit" (click)="onAddQuestionDetail()">Add</button>
             </div
             >

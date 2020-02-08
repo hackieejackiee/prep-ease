@@ -21,6 +21,12 @@ export class HelperServices {
 
   //-----------------------Services for Login Page-------------------------
 
+  public signin(emailId: string, password:string): Observable<Responses.ILoginResponse>{
+    return this._http.post<Responses.ILoginResponse>(this._url.USER_AUTHENTICATION, {
+      email: emailId,
+      password: password
+    }, this.options);
+  }
   public getAllInstitutes(): Observable<Responses.IGetAllInstitutes> {
       return this._http.get<Responses.IGetAllInstitutes>(this._url.ALL_INSTITUTES, this.options);
   }

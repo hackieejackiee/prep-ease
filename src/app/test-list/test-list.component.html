@@ -8,7 +8,7 @@
       <hr>
       <div *ngFor="let question of questionPaper; let i = index;">
         <div>
-          <button class="question-button">{{i+1}}</button>
+          <button class="question-button" onclick="displayQuestion(i)">{{i+1}}</button>
           <!-- <button class="question-button">2</button>
           <button class="question-button">3</button> -->
         </div>

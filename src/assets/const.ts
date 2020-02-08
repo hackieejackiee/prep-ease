@@ -4,7 +4,7 @@ export class GlobalConstants{
     
     //localIP
     // public IMAGE_BASE_URL = "http://192.168.31.106:3001/queImages/"
-    private BASE_URL = "http://192.168.31.106:3001/";
+    private BASE_URL = "http://192.168.31.106:3000/";
     public ALL_INSTITUTES = this.BASE_URL + "registrationData/getAllInstitutes";
     public ALL_CLASSES = this.BASE_URL + "registrationData/getAllClasses";
     public ALL_SUBJECT = this.BASE_URL + "registrationData/getAllSubjects";

@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {UpcomingTestsComponent} from './upcoming-tests/upcoming-tests.component';
 import { DashboardStudentComponent } from './dashboard-student/dashboard-student.component';
 import { TestListComponent } from './test-list/test-list.component';
+import { AuthGaurdComponent } from '../app/auth-gaurd/auth-gaurd.component';
 
 const routes: Routes = [
   // {path: 'fgug', component: DashboardComponent},
@@ -45,7 +46,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [HelperServices,GlobalConstants],
+  providers: [HelperServices,GlobalConstants,AuthGaurdComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

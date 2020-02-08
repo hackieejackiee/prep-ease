@@ -11,7 +11,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   constructor(private router: Router){}
 
   public ngOnInit() {
-
   }
 
   public navigateToLogin(type:string){
@@ -23,7 +22,6 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     }
   }
   public ngOnDestroy() {
-
   }
   
 }

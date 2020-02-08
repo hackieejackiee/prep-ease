@@ -1,9 +1,35 @@
+//signin type
+export interface ILoginResponse{
+        success: boolean,
+        msg: string,
+        token: string,
+        refreshToken: string,
+        user: IUser
+}
+
+export interface IUser{
+        _id: string,
+        name : string,
+        email : string,
+        userType : string,
+        phoneNo : string,
+        dob : string,
+        gender : string,
+        parentsName : string,
+        parentsEmail : string,
+        parentsPhNo : string,
+        parentsQual : string,
+        stuClass : IClasses,
+        stuInstitute : IInstitutes,
+        medium : string
+}
+//get all insitute
 export interface IGetAllInstitutes{
         success: boolean,
         Institutes: IInstitutes[]
 };
 export interface IInstitutes{
-        id: string,
+        _id: string,
         instituteName: string,
         instituteCity: string,
         instituteState: string
@@ -13,7 +39,7 @@ export interface IGetAllClasses{
         Classes: IClasses[]
 };
 export interface IClasses{
-        id: string,
+        _id: string,
         className: string
 };
 export interface IGetAllSubjects{
@@ -21,7 +47,7 @@ export interface IGetAllSubjects{
         Subjects: ISubjects[]
 };
 export interface ISubjects{
-        id: string,
+        _id: string,
         subjectName: string
 }
 //Registration for student
@@ -85,7 +111,7 @@ export interface ITestListDetail{
 }
 
 export interface ITestList{
-        id: string,
+        _id: string,
         testTitle: string,
         startDate: string,
         endDate: string,

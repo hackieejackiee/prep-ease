@@ -26,13 +26,16 @@ export class TestListComponent implements OnInit, OnDestroy {
       
       );
 
-    this._helper.getQuestionPaper(this.test)
+    this._helper.getQuestionPaper('5e3d92eaa97d2a1fddc28189')
       .pipe(first(), takeUntil(this.unsubscribe$))
       .subscribe((response: Types.IQuestionPaperDetail) => {
         this.questionPaper = response.questionsList;
       });
   }
 
+  public displayQuestion(){
+    
+  }
   public ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
