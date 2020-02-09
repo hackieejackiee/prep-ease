@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Type } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HelperServices } from '../../assets/services';
 import { first, takeUntil } from 'rxjs/operators';
@@ -24,7 +24,7 @@ export class TestListComponent implements OnInit, OnDestroy {
   public question_id: string;
   public answer: string;
   public questionNumber: number;
-
+  public result: Types.IResult;
 
   constructor(private _helper: HelperServices,
     private _route: ActivatedRoute,
@@ -96,6 +96,13 @@ export class TestListComponent implements OnInit, OnDestroy {
       test_id: this.test_id,
       answersList: this.answersList
     };
+    this._helper.submitTest(this.submitAnswer)
+    .pipe(first(), takeUntil(this.unsubscribe$))
+    .subscribe((response: Types.ITestResult) => {
+      if(response.success){
+        this.result = response.result;
+      }
+    })
   }
   public ngOnDestroy() {
     this.unsubscribe$.next();

@@ -63,8 +63,8 @@ export class HelperServices {
     return this._http.get<Responses.IQuestionPaperDetail>(this._url.START_TEST+'/'+testId, { 
       headers : this.headers});
   }
-  public submitTest(submitData: Responses.ISubmitAnswer): Observable<Responses.ISubmitAnswer> {
-    return this._http.post<Responses.ISubmitAnswer>('uiascasbc','asacacac');
+  public submitTest(submitData: Responses.ISubmitAnswer): Observable<Responses.ITestResult> {
+    return this._http.post<Responses.ITestResult>(this._url.SUBMIT_TEST, submitData, this.options);
   }
 //-------------------------------------------------------------------------
 }

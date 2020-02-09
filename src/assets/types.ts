@@ -138,6 +138,8 @@ export interface IQuestionPaper{
         selectedOption?: string,
         image: string
 }
+
+//post answer for the test
 export interface ISavedAnswer{
         question_id: string,
         answer: string
@@ -146,5 +148,17 @@ export interface ISubmitAnswer{
         test_id: string;
         student_Id: string;
         answersList: ISavedAnswer[];
+}
 
+//response of the submitted test
+export interface ITestResult{
+        success: boolean,
+        result: IResult
+}
+export interface IResult{
+        _id: string,
+        testId: string,
+        totalAttempted: number,
+        totalCorrect: number,
+        totalQuestions: number
 }

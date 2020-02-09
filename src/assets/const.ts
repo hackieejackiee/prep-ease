@@ -14,4 +14,5 @@ export class GlobalConstants{
     public UPLOAD_IMAGE = this.BASE_URL + "upload/image";
     public GET_All_TEST = this.BASE_URL + "testRoute/getAllTests"
     public START_TEST = this.BASE_URL + "testRoute/getSingleTestQuestions";
+    public SUBMIT_TEST = this.BASE_URL + "/testRoute/submitTest";
 }
